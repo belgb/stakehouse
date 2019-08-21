@@ -85,6 +85,6 @@ This project is licensed under the BSD 3 Clause License - see the
 
 ## Acknowledgments
 
-**Jo Fitzgerald** - *Engagement* - [https://www.jofitzconsulting.co.nz](www.jofitzconsulting.co.nz)
-**Kearin Armstrong** - *Design & Brand* - [https://www.manonfire.org](www.manonfire.org)
-**Colin Rowsell** - *Strategy* - [https://www.manonfire.org](www.manonfire.org)
+* **Jo Fitzgerald** - *Engagement* - [www.jofitzconsulting.co.nz](https://www.jofitzconsulting.co.nz)
+* **Kearin Armstrong** - *Design & Brand* - [www.manonfire.org](https://www.manonfire.org)
+* **Colin Rowsell** - *Strategy* - [www.manonfire.org](https://www.manonfire.org)
