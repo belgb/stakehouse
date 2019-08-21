@@ -16,10 +16,6 @@
   "scripts": {
     "start": "electron-forge start",
     "make": "electron-forge make",
-    "make:all": "npm-run-all make:darwin make:linux make:win32",
-    "make:darwin": "electron-forge make --platform=darwin --arch=x64",
-    "make:linux": "electron-forge make --platform=linux --arch=x64",
-    "make:win32": "electron-forge make --platform=win32 --arch=x64",
     "lint": "standard --parser babel-eslint --fix"
   },
   "keywords": [],
