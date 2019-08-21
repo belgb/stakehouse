@@ -12,24 +12,7 @@ local machine for development and testing purposes.
 * Git
 * Node.js
 * npm
-
-#### Optional
-
-If you're using macOS and want to build for Linux or Windows you'll
-need to install some extras.
-
-##### Linux (deb and rpm) build
-
-* fakeroot
-* dpkg
-* rpm
-
-##### Windows build
-
-* wine
-* mono
-
-These packages are available via Homebrew `brew install <package-name>`
+* [node-gyp prerequisites](https://github.com/nodejs/node-gyp#installation) for your platform
 
 ### Installing
 
