@@ -1,0 +1,111 @@
+{
+  "name": "stakehouse",
+  "productName": "Stakehouse",
+  "description": "Better stakeholder engagement",
+  "version": "1.0.0",
+  "homepage": "https://github.com/trinsiclabs/stakehouse#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trinsiclabs/stakehouse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trinsiclabs/stakehouse/issues",
+    "email": "david@davidcraig.co.nz"
+  },
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "make": "electron-forge make",
+    "make:all": "npm-run-all make:darwin make:linux make:win32",
+    "make:darwin": "electron-forge make --platform=darwin --arch=x64",
+    "make:linux": "electron-forge make --platform=linux --arch=x64",
+    "make:win32": "electron-forge make --platform=win32 --arch=x64",
+    "lint": "standard --parser babel-eslint --fix"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Trinsic Labs",
+    "email": "david@davidcraig.co.nz"
+  },
+  "license": "BSD-3-Clause",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm",
+        "asar": true
+      },
+      "electronWinstallerConfig": {
+        "name": "stakehouse"
+      },
+      "electronInstallerDebian": {
+        "name": "stakehouse"
+      },
+      "electronInstallerRedhat": {
+        "name": "stakehouse"
+      },
+      "github_repository": {
+        "owner": "trinsiclabs",
+        "name": "stakehouse"
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "Stakehouse"
+      }
+    }
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.3.1",
+    "@material-ui/icons": "^4.2.1",
+    "clsx": "^1.0.4",
+    "connected-react-router": "^4.5.0",
+    "convert-array-to-csv": "^1.0.9",
+    "core-js": "^3.1.4",
+    "d3": "^5.9.7",
+    "electron-compile": "^6.4.3",
+    "electron-devtools-installer": "^2.1.0",
+    "electron-log": "^3.0.7",
+    "electron-promise-ipc": "^1.3.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "formik": "^1.5.8",
+    "fuse.js": "^3.4.5",
+    "history": "^4.9.0",
+    "path-to-regexp": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.4",
+    "regenerator-runtime": "^0.13.3",
+    "sequelize": "^4.44.2",
+    "sqlite3": "^4.0.9",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^5.2.2",
+    "electron-prebuilt-compile": "3.0.0",
+    "npm-run-all": "^4.1.5",
+    "standard": "^13.1.0"
+  }
+}

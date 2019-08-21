@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Stakehouse</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div id="App" style="display: flex;"></div>
+    <script type="text/jsx">
+      import 'core-js/stable';
+      import 'regenerator-runtime/runtime';
+      import React from 'react';
+      import ReactDOM from 'react-dom';
+      import {Provider} from 'react-redux';
+      import initStore from './redux';
+
+      const render = () => {
+        const AppWrapper = require('./components/apps/Wrapper').default;
+
+        ReactDOM.render(
+          <Provider store={initStore()}>
+            <AppWrapper />
+          </Provider>,
+          document.getElementById('App')
+        );
+      }
+
+      render();
+    </script>
+  </body>
+</html>
