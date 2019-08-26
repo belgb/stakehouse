@@ -7,12 +7,16 @@ import { Formik } from 'formik'
 import PropTypes from 'prop-types'
 import React from 'react'
 import * as Yup from 'yup'
-import { STAKEHOLDER_SECTORS, STAKEHOLDER_STATUSES } from '../../constants'
+import { MESSAGES, STAKEHOLDER_SECTORS, STAKEHOLDER_STATUSES } from '../../constants'
 import DropdownField from '../shared/DropdownField'
 
 const useStyles = makeStyles(theme => ({
   button: {
     marginRight: theme.spacing(2)
+  },
+  formHelpText: {
+    display: 'block',
+    marginBottom: theme.spacing(2)
   },
   formSection: {
     marginBottom: theme.spacing(3)
@@ -121,6 +125,12 @@ const MappedStakeholderForm = props => {
         values
       }) => (
         <form onSubmit={handleSubmit}>
+          <Typography
+            className={classes.formHelpText}
+            variant='caption'
+          >
+            {MESSAGES.FORM_HELP_TEXT}
+          </Typography>
           <input
             id='id'
             type='hidden'

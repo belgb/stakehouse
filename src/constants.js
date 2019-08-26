@@ -69,6 +69,7 @@ export const MESSAGES = {
     ERROR: 'Something went wrong - please try again',
     SUCCESS: 'Success'
   },
+  FORM_HELP_TEXT: 'Fields marked with * are required.',
   TYPES: {
     ERROR: 'error',
     INFO: 'info',

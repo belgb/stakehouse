@@ -1,10 +1,12 @@
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
 import { Formik } from 'formik'
 import PropTypes from 'prop-types'
 import React from 'react'
 import * as Yup from 'yup'
+import { MESSAGES } from '../../constants'
 
 const schema = Yup.object().shape({
   name: Yup
@@ -15,6 +17,10 @@ const schema = Yup.object().shape({
 const useStyles = makeStyles(theme => ({
   button: {
     marginRight: theme.spacing(2)
+  },
+  formHelpText: {
+    display: 'block',
+    marginBottom: theme.spacing(2)
   },
   textField: {
     marginBottom: theme.spacing(3)
@@ -38,6 +44,12 @@ const StakeholderMapForm = props => {
         values
       }) => (
         <form onSubmit={handleSubmit}>
+          <Typography
+            className={classes.formHelpText}
+            variant='caption'
+          >
+            {MESSAGES.FORM_HELP_TEXT}
+          </Typography>
           <TextField
             id='name'
             className={classes.textField}
