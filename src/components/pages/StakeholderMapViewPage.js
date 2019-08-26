@@ -258,6 +258,25 @@ const StakeholderMapViewPage = props => {
         title={stakeholderMap.name || ''}
       />
 
+      {stakeholders.length === 0 &&
+        <Grid
+          container
+          spacing={3}
+        >
+          <Grid
+            item
+            xs={12}
+          >
+            <Typography
+              variant='subtitle1'
+              gutterBottom
+            >
+              To create your map, start by adding a stakeholder or partner.
+            </Typography>
+          </Grid>
+        </Grid>
+      }
+
       <Grid
         container
         spacing={3}
@@ -277,74 +296,68 @@ const StakeholderMapViewPage = props => {
       </Grid>
 
       {stakeholders.length > 0 &&
-        <Grid
-          className={classes.filters}
-          container
-          spacing={3}
-        >
+        <React.Fragment>
           <Grid
-            className={classes.filterTitle}
-            item
-            xs={12}
+            className={classes.filters}
+            container
+            spacing={3}
           >
-            <Typography
-              component='h3'
-              variant='h6'
+            <Grid
+              className={classes.filterTitle}
+              item
+              xs={12}
             >
-              Filter by:
-            </Typography>
+              <Typography
+                component='h3'
+                variant='h6'
+              >
+                Filter by:
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={4}
+            >
+              <DropdownField
+                id='sectorFilter'
+                labelText='Sector'
+                onChange={handleFilterChange}
+                options={getSectorOptions()}
+                value={sectorFilter}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={4}
+            >
+              <DropdownField
+                id='organisationFilter'
+                labelText='Organisation'
+                onChange={handleFilterChange}
+                options={getOrganisationOptions()}
+                value={organisationFilter}
+              />
+            </Grid>
           </Grid>
-          <Grid
-            item
-            xs={4}
-          >
-            <DropdownField
-              id='sectorFilter'
-              labelText='Sector'
-              onChange={handleFilterChange}
-              options={getSectorOptions()}
-              value={sectorFilter}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={4}
-          >
-            <DropdownField
-              id='organisationFilter'
-              labelText='Organisation'
-              onChange={handleFilterChange}
-              options={getOrganisationOptions()}
-              value={organisationFilter}
-            />
-          </Grid>
-        </Grid>
-      }
 
-      <Grid
-        container
-        spacing={3}
-      >
-        <Grid
-          item
-          xs={12}
-        >
-          {stakeholders.length > 0
-            ? <EngagementMap
-              height={700}
-              onStakeholderClick={handleStakeholderClick}
-              stakeholders={getFilteredStakeholders()}
-              width={1024}
-            />
-            : <Typography
-              variant='subtitle1'
-              gutterBottom
+          <Grid
+            container
+            spacing={3}
+          >
+            <Grid
+              item
+              xs={12}
             >
-                Start by adding a stakeholder or partner to your map.
-            </Typography>
-          }
-        </Grid>
-      </Grid>
+              <EngagementMap
+                height={700}
+                onStakeholderClick={handleStakeholderClick}
+                stakeholders={getFilteredStakeholders()}
+                width={1024}
+              />
+            </Grid>
+          </Grid>
+        </React.Fragment>
+      }
 
       <Dialog
         actions={[

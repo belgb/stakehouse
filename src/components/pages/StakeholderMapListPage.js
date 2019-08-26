@@ -74,6 +74,41 @@ const StakeholderMapListPage = props => {
       container
       spacing={3}
     >
+      {stakeholderMaps.length === 0 &&
+        <React.Fragment>
+          <Grid
+            item
+            xs={12}
+          >
+            <Typography
+              component='h1'
+              variant='h2'
+            >
+              Welcome to Stakehouse!
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            xs={6}
+          >
+            <Typography
+              variant='body1'
+              gutterBottom
+            >
+              We've built this as a simple tool for engagement mapping.
+            </Typography>
+            <Typography
+              variant='body1'
+              gutterBottom
+            >
+              Create a map, add stakeholders or partners, and help manage
+              relationships. Intended for public sector (IAP2) engagement, but
+              if you find other uses we'd love to hear from you.
+            </Typography>
+          </Grid>
+        </React.Fragment>
+      }
+
       <Grid
         item
         xs={12}
@@ -87,12 +122,12 @@ const StakeholderMapListPage = props => {
         </Button>
       </Grid>
 
-      <Grid
-        item
-        xs={12}
-      >
-        {stakeholderMaps.length > 0
-          ? <Table
+      {stakeholderMaps.length > 0 &&
+        <Grid
+          item
+          xs={12}
+        >
+          <Table
             id='maps'
             head={['Name', 'Actions']}
             body={stakeholderMaps.map(item => {
@@ -122,14 +157,8 @@ const StakeholderMapListPage = props => {
               return [item.name, actions]
             })}
           />
-          : <Typography
-            variant='subtitle1'
-            gutterBottom
-          >
-              Start by creating your first engagement map.
-          </Typography>
-        }
-      </Grid>
+        </Grid>
+      }
 
       <Dialog
         actions={[
