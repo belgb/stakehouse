@@ -354,7 +354,7 @@ const StakeholderMapViewPage = props => {
               xs={12}
             >
               <EngagementMap
-                height={700}
+                height={600}
                 onStakeholderClick={handleStakeholderClick}
                 stakeholders={getFilteredStakeholders()}
                 width={1024}

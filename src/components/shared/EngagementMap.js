@@ -90,7 +90,7 @@ const EngagementMap = props => {
 
   const yScale = scaleLinear()
     .domain([10, 1])
-    .range([props.paddingY * 4, props.height - (props.paddingY * 4)])
+    .range([props.paddingY * 3, props.height - (props.paddingY * 2)])
 
   const lineFunc = line()
     .x(d => xScale(d.x))
@@ -196,7 +196,7 @@ const EngagementMap = props => {
   const legend = (
     <g
       ref={legendRef}
-      transform={`translate(${xScale(1) + 8}, ${yScale(11.75)})`}
+      transform={`translate(${xScale(1) + 8}, ${yScale(11.25)})`}
     >
       <text className={classes.legendTitle}>
         Key &mdash; Relationship status
