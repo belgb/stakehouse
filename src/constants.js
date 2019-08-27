@@ -3,6 +3,17 @@ import green from '@material-ui/core/colors/green'
 import orange from '@material-ui/core/colors/orange'
 import red from '@material-ui/core/colors/red'
 
+export const COLOR = {
+  BACKGROUND: '#fff',
+  ERROR: '#ba1614',
+  PRIMARY: '#0d6f77',
+  PRIMARY_LIGHT: '#1badba',
+  SECONDARY: '#b91aaa',
+  SUCCESS: '#53ba21',
+  TEXT: '#22244a',
+  WARNING: orange[700]
+}
+
 export const COMMS_KEYS = {
   MANAGE: 'MANAGE',
   SATISFIED: 'SATISFIED',

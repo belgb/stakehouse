@@ -1,5 +1,6 @@
 import blueGrey from '@material-ui/core/colors/blueGrey'
 import { makeStyles } from '@material-ui/core/styles'
+import clsx from 'clsx'
 import { curveLinear, line, scaleLinear, symbol, symbolCircle } from 'd3'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef } from 'react'
@@ -15,11 +16,18 @@ const lineColor = blueGrey[50]
 
 const useStyles = makeStyles(theme => ({
   axisLabel: {
-    fontSize: '16px',
-    fontWeight: 700
+    ...theme.typography.caption,
+    fill: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightBold
   },
-  legendKey: {
-    fontWeight: 700
+  legendTitle: {
+    ...theme.typography.caption,
+    fill: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightBold
+  },
+  legendLabel: {
+    ...theme.typography.caption,
+    fill: theme.palette.text.primary,
   },
   mapItemClickable: {
     '&:hover, &:focus': {
@@ -27,7 +35,12 @@ const useStyles = makeStyles(theme => ({
       textDecoration: 'underline'
     }
   },
+  mapItemLabel: {
+    ...theme.typography.caption,
+    fill: theme.palette.text.primary,
+  },
   quadrantLabel: {
+    ...theme.typography.caption,
     fill: blueGrey[400]
   }
 }))
@@ -140,7 +153,10 @@ const EngagementMap = props => {
               return (
                 <text
                   key={i.toString()}
-                  className={isClickable ? classes.mapItemClickable : null}
+                  className={isClickable
+                    ? clsx(classes.mapItemLabel, classes.mapItemClickable)
+                    : classes.mapItemLabel
+                  }
                   x={x}
                   y={y}
                   dy={`${i * 18}`}
@@ -182,7 +198,7 @@ const EngagementMap = props => {
       ref={legendRef}
       transform={`translate(${xScale(1) + 8}, ${yScale(11.75)})`}
     >
-      <text className={classes.legendKey}>
+      <text className={classes.legendTitle}>
         Key &mdash; Relationship status
       </text>
       {legendItems.map((item, itemIndex) => (
@@ -195,7 +211,10 @@ const EngagementMap = props => {
             }
             fill={item.fill}
           />
-          <text dominantBaseline='middle'>
+          <text
+            className={classes.legendLabel}
+            dominantBaseline='middle'
+          >
             {item.title}
           </text>
         </g>

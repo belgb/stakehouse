@@ -11,6 +11,10 @@ import { LAYOUT } from '../../constants'
 
 const useStyles = makeStyles(theme => ({
   appBar: {
+    color: theme.palette.text.primary,
+    backgroundColor: theme.palette.primary.light,
+    borderBottom: `1px solid ${theme.palette.divider}`,
+    boxShadow: theme.shadows[0],
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,

@@ -1,4 +1,3 @@
-import { amber, green } from '@material-ui/core/colors'
 import IconButton from '@material-ui/core/IconButton'
 import Snackbar from '@material-ui/core/Snackbar'
 import SnackbarContent from '@material-ui/core/SnackbarContent'
@@ -12,6 +11,7 @@ import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
+import { COLOR } from '../../constants'
 import { hide, show } from '../../redux/message/actions'
 
 const icons = {
@@ -23,16 +23,18 @@ const icons = {
 
 const styles = makeStyles(theme => ({
   success: {
-    backgroundColor: green[600]
+    color: theme.palette.text.primary,
+    backgroundColor: COLOR.SUCCESS
   },
   error: {
-    backgroundColor: theme.palette.error.dark
+    color: theme.palette.common.white,
+    backgroundColor: theme.palette.error
   },
   info: {
-    backgroundColor: theme.palette.primary.dark
+    backgroundColor: theme.palette.primary.light
   },
   warning: {
-    backgroundColor: amber[700]
+    backgroundColor: COLOR.WARNING
   },
   icon: {
     fontSize: 20

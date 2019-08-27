@@ -1,4 +1,3 @@
-import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import { makeStyles } from '@material-ui/core/styles'
@@ -10,6 +9,7 @@ import { MESSAGES, PAGES } from '../../constants'
 import { compilePath } from '../../util/path'
 import withLayout from '../providers/LayoutProvider'
 import withStakeholderMaps from '../providers/StakeholderMapsProvider'
+import Button from '../shared/Button'
 import Dialog from '../shared/Dialog'
 import Table from '../shared/Table'
 

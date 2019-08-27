@@ -8,25 +8,51 @@
   <body>
     <div id="App" style="display: flex;"></div>
     <script type="text/jsx">
-      import 'core-js/stable';
-      import 'regenerator-runtime/runtime';
-      import React from 'react';
-      import ReactDOM from 'react-dom';
-      import {Provider} from 'react-redux';
-      import initStore from './redux';
+      import 'core-js/stable'
+      import 'regenerator-runtime/runtime'
+      import { createMuiTheme } from '@material-ui/core/styles'
+      import { ThemeProvider } from '@material-ui/styles'
+      import React from 'react'
+      import ReactDOM from 'react-dom'
+      import { Provider } from 'react-redux'
+      import { COLOR } from './constants'
+      import initStore from './redux'
+
+      const theme = createMuiTheme({
+        palette: {
+          primary: {
+            main: COLOR.PRIMARY,
+            light: COLOR.PRIMARY_LIGHT
+          },
+          secondary: {
+            main: COLOR.SECONDARY
+          },
+          text: {
+            primary: COLOR.TEXT
+          },
+          error: {
+            main: COLOR.ERROR
+          },
+          background: {
+            default: COLOR.BACKGROUND
+          }
+        }
+      })
 
       const render = () => {
-        const AppWrapper = require('./components/apps/Wrapper').default;
+        const AppWrapper = require('./components/apps/Wrapper').default
 
         ReactDOM.render(
           <Provider store={initStore()}>
-            <AppWrapper />
+            <ThemeProvider theme={theme}>
+              <AppWrapper />
+            </ThemeProvider>
           </Provider>,
           document.getElementById('App')
         );
       }
 
-      render();
+      render()
     </script>
   </body>
 </html>

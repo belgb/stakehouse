@@ -1,4 +1,3 @@
-import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
@@ -8,6 +7,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import * as Yup from 'yup'
 import { MESSAGES, STAKEHOLDER_SECTORS, STAKEHOLDER_STATUSES } from '../../constants'
+import Button from '../shared/Button'
 import DropdownField from '../shared/DropdownField'
 
 const useStyles = makeStyles(theme => ({

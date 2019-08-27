@@ -1,4 +1,3 @@
-import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
@@ -7,6 +6,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import * as Yup from 'yup'
 import { MESSAGES } from '../../constants'
+import Button from '../shared/Button'
 
 const schema = Yup.object().shape({
   name: Yup
