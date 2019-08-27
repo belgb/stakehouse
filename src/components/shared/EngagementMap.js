@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
   legendLabel: {
     ...theme.typography.caption,
-    fill: theme.palette.text.primary,
+    fill: theme.palette.text.primary
   },
   mapItemClickable: {
     '&:hover, &:focus': {
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   mapItemLabel: {
     ...theme.typography.caption,
-    fill: theme.palette.text.primary,
+    fill: theme.palette.text.primary
   },
   quadrantLabel: {
     ...theme.typography.caption,

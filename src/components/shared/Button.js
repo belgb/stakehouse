@@ -18,6 +18,6 @@ const ButtonComponent = props => {
       className={clsx(classes.button, props.className)}
     />
   )
-};
+}
 
 export default ButtonComponent
