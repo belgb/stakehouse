@@ -23,6 +23,7 @@ const StakeholderMapListPage = props => {
   const classes = useStyles()
 
   const [activeStakeholderMap, setActiveStakeholderMap] = useState({})
+  const [isFetchingInitialData, setIsFetchingInitialData] = useState(true)
   const [stakeholderMaps, setStakeholderMaps] = useState([])
 
   const handleShowDialog = item => {
@@ -66,6 +67,7 @@ const StakeholderMapListPage = props => {
       .stakeholderMapFindAll()
       .then(items => {
         setStakeholderMaps(items)
+        setIsFetchingInitialData(false)
       })
   }, [])
 
@@ -74,7 +76,7 @@ const StakeholderMapListPage = props => {
       container
       spacing={3}
     >
-      {stakeholderMaps.length === 0 &&
+      {stakeholderMaps.length === 0 && isFetchingInitialData === false &&
         <React.Fragment>
           <Grid
             item
@@ -109,18 +111,20 @@ const StakeholderMapListPage = props => {
         </React.Fragment>
       }
 
-      <Grid
-        item
-        xs={12}
-      >
-        <Button
-          color='primary'
-          onClick={handleNavigateStakeholderMapAdd}
-          variant='contained'
+      {isFetchingInitialData === false &&
+        <Grid
+          item
+          xs={12}
         >
-          Create engagement map
-        </Button>
-      </Grid>
+          <Button
+            color='primary'
+            onClick={handleNavigateStakeholderMapAdd}
+            variant='contained'
+          >
+            Create engagement map
+          </Button>
+        </Grid>
+      }
 
       {stakeholderMaps.length > 0 &&
         <Grid

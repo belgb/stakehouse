@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme => ({
 const StakeholderMapViewPage = props => {
   const classes = useStyles()
 
+  const [isFetchingInitialData, setIsFetchingInitialData] = useState(true)
   const [stakeholders, setStakeholders] = useState([])
   const [stakeholderMap, setStakeholderMap] = useState({})
   const [dialogIsOpen, setDialogIsOpen] = useState(false)
@@ -57,6 +58,8 @@ const StakeholderMapViewPage = props => {
         props.showMessage(MESSAGES.CONTENT.ERROR, MESSAGES.TYPES.ERROR)
         navigateToStakeholderMapListPage()
       }
+
+      setIsFetchingInitialData(false)
     })
   }, [])
 
@@ -258,7 +261,7 @@ const StakeholderMapViewPage = props => {
         title={stakeholderMap.name || ''}
       />
 
-      {stakeholders.length === 0 &&
+      {stakeholders.length === 0 && isFetchingInitialData === false &&
         <Grid
           container
           spacing={3}
@@ -277,23 +280,25 @@ const StakeholderMapViewPage = props => {
         </Grid>
       }
 
-      <Grid
-        container
-        spacing={3}
-      >
+      {isFetchingInitialData === false &&
         <Grid
-          item
-          xs={12}
+          container
+          spacing={3}
         >
-          <Button
-            color='primary'
-            onClick={handleAddStakeholder}
-            variant='contained'
+          <Grid
+            item
+            xs={12}
           >
-            Add stakeholder or partner to map
-          </Button>
+            <Button
+              color='primary'
+              onClick={handleAddStakeholder}
+              variant='contained'
+            >
+              Add stakeholder or partner to map
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
+      }
 
       {stakeholders.length > 0 &&
         <React.Fragment>
