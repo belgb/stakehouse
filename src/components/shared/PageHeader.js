@@ -45,7 +45,7 @@ const PageHeader = props => {
           }
 
           <Typography
-            variant='h2'
+            variant='h3'
             component='h1'
           >
             {props.title}

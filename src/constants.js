@@ -35,6 +35,11 @@ export const COMMS_RESPONSES = {
   [COMMS_KEYS.MONITOR]: 'Monitor and provide updates as required, be ready to respond to questions and requests.'
 }
 
+export const FONT = {
+  BODY: 'Lato',
+  HEADING: 'Montserrat'
+}
+
 export const PAGES = {
   MAPPED_STAKEHOLDER_ADD_TO_MAP: {
     TITLE: 'Add stakeholder or partner',

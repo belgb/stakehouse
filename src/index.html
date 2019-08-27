@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title>Stakehouse</title>
-    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <div id="App" style="display: flex;"></div>
@@ -15,8 +14,40 @@
       import React from 'react'
       import ReactDOM from 'react-dom'
       import { Provider } from 'react-redux'
-      import { COLOR } from './constants'
+      import { COLOR, FONT } from './constants'
       import initStore from './redux'
+
+      const latoBlack = {
+        fontFamily: FONT.BODY,
+        fontStyle: 'normal',
+        fontWeight: 900,
+        fontDisplay: 'swap',
+        src: 'local("Lato Black"), local("Lato-Black"), url("fonts/lato/Lato-Black.ttf") format("truetype")'
+      }
+
+      const latoRegular = {
+        fontFamily: FONT.BODY,
+        fontStyle: 'normal',
+        fontWeight: 400,
+        fontDisplay: 'swap',
+        src: 'local("Lato Regular"), local("Lato-Regular"), url("fonts/lato/Lato-Regular.ttf") format("truetype")'
+      }
+
+      const latoItalic = {
+        fontFamily: FONT.BODY,
+        fontStyle: 'italic',
+        fontWeight: 400,
+        fontDisplay: 'swap',
+        src: 'local("Lato Italic"), local("Lato-Italic"), url("fonts/lato/Lato-RegularItalic.ttf") format("truetype")'
+      }
+
+      const montserratBlack = {
+        fontFamily: FONT.HEADING,
+        fontStyle: 'normal',
+        fontWeight: 900,
+        fontDisplay: 'swap',
+        src: 'local("Montserrat Black"), local("Montserrat-Black"), url("fonts/montserrat/Montserrat-Black.ttf") format("truetype")'
+      }
 
       const theme = createMuiTheme({
         palette: {
@@ -35,6 +66,39 @@
           },
           background: {
             default: COLOR.BACKGROUND
+          }
+        },
+        typography: {
+          fontFamily: '"Lato"',
+          // fontFamily: '"Lato", "Helvetica", "Arial", sans-serif',
+          fontWeightLight: 400,
+          fontWeightRegular: 400,
+          fontWeightMedium: 400,
+          fontWeightBold: 900,
+          h1: {
+            fontFamily: '"Montserrat"'
+          },
+          h2: {
+            fontFamily: '"Montserrat"'
+          },
+          h3: {
+            fontFamily: '"Montserrat"'
+          },
+          h4: {
+            fontFamily: '"Montserrat"'
+          },
+          h5: {
+            fontFamily: '"Montserrat"'
+          },
+          h6: {
+            fontFamily: '"Montserrat"'
+          }
+        },
+        overrides: {
+          MuiCssBaseline: {
+            '@global': {
+              '@font-face': [latoBlack, latoRegular, latoItalic, montserratBlack]
+            }
           }
         }
       })

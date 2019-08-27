@@ -7,6 +7,7 @@ import React, { useEffect, useRef } from 'react'
 import {
   COMMS_KEYS,
   COMMS_GROUPS,
+  FONT,
   STAKEHOLDER_STATUSES,
   STAKEHOLDER_STATUS_COLORS,
   STATUS_WEIGHT
@@ -18,16 +19,20 @@ const useStyles = makeStyles(theme => ({
   axisLabel: {
     ...theme.typography.caption,
     fill: theme.palette.text.primary,
+    fontFamily: FONT.HEADING,
+    fontSize: theme.typography.subtitle2.fontSize,
     fontWeight: theme.typography.fontWeightBold
   },
   legendTitle: {
     ...theme.typography.caption,
     fill: theme.palette.text.primary,
+    fontFamily: FONT.HEADING,
     fontWeight: theme.typography.fontWeightBold
   },
   legendLabel: {
     ...theme.typography.caption,
-    fill: theme.palette.text.primary
+    fill: theme.palette.text.primary,
+    fontFamily: FONT.BODY
   },
   mapItemClickable: {
     '&:hover, &:focus': {
@@ -37,11 +42,13 @@ const useStyles = makeStyles(theme => ({
   },
   mapItemLabel: {
     ...theme.typography.caption,
-    fill: theme.palette.text.primary
+    fill: theme.palette.text.primary,
+    fontFamily: FONT.BODY
   },
   quadrantLabel: {
     ...theme.typography.caption,
-    fill: blueGrey[400]
+    fill: blueGrey[400],
+    fontFamily: FONT.HEADING
   }
 }))
 

@@ -138,7 +138,7 @@ const MappedStakeholderForm = props => {
           />
           <div className={classes.formSection}>
             <Typography
-              variant='h4'
+              variant='h5'
               component='h2'
               gutterBottom
             >
@@ -252,7 +252,7 @@ const MappedStakeholderForm = props => {
 
           <div className={classes.formSection}>
             <Typography
-              variant='h4'
+              variant='h5'
               component='h2'
               gutterBottom
             >
@@ -305,7 +305,7 @@ const MappedStakeholderForm = props => {
 
           <div className={classes.formSection}>
             <Typography
-              variant='h4'
+              variant='h5'
               component='h2'
               gutterBottom
             >
