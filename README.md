@@ -7,8 +7,8 @@ A desktop application for better stakeholder engagement.
 These instructions will get you a copy of the project up and running on your
 local machine for development and testing purposes.
 
-If you just want try the software, you can download the latest version from the
-[releases section](https://github.com/trinsiclabs/stakehouse/releases)
+If you just want to try the software, you can download the latest version from
+the [releases section](https://github.com/trinsiclabs/stakehouse/releases)
 of this repository.
 
 ### Prerequisites
