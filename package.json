@@ -40,6 +40,7 @@
       },
       "electronPackagerConfig": {
         "packageManager": "npm",
+        "icon": "src/images/app-icon/icon",
         "asar": true
       },
       "electronWinstallerConfig": {
