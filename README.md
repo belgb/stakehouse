@@ -1,11 +1,15 @@
 # Stakehouse
 
-Better stakeholder engagement.
+A desktop application for better stakeholder engagement.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your
 local machine for development and testing purposes.
+
+If you just want try the software, you can download the latest version from the
+[releases section](https://github.com/trinsiclabs/stakehouse/releases)
+of this repository.
 
 ### Prerequisites
 
@@ -31,13 +35,13 @@ $ npm install
 Start the app
 
 ```
-npm run start
+$ npm run start
 ```
 
 Build a standalone version for your OS
 
 ```
-npm run make
+$ npm run make
 ```
 
 ## Contributing
