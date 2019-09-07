@@ -1,15 +1,20 @@
 # Stakehouse
 
-A desktop application for better stakeholder engagement.
+Engagement mapping is key to working effectively with stakeholders, especially
+in the public sector. But post-its and clunky spreadsheets can be frustrating. 
+
+Stakehouse is a simple desktop application for easy engagement mapping.
+
+[https://stakehouse.co.nz](https://stakehouse.co.nz)
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your
-local machine for development and testing purposes.
 
 If you just want to try the software, you can download the latest version from
 the [releases section](https://github.com/trinsiclabs/stakehouse/releases)
 of this repository.
+
+The following instructions will get you a copy of the project up and running
+on your local machine for development and testing purposes.
 
 ### Prerequisites
 
